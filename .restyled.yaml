@@ -1,7 +1,0 @@
----
-restylers:
-  - shfmt:
-      arguments:
-        - -i
-        - "2"
-        - -ci
