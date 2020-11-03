@@ -338,6 +338,7 @@ initialize() {
       --noconfirm)
         noconfirm=true
         makepkg_options+=('--noconfirm')
+        makepkg_options+=('-A')
         ;;
       --devel) devels=true ;;
       --deps) resolve_dependencies=true ;;
@@ -394,15 +395,17 @@ set_defaults() {
   keep_source_packages=''
   makepkg='makepkg'
   makepkg_options=('--syncdeps')
-  noconfirm=false
+  makepkg_options+=('-A')
+  noconfirm=true
   opmode=''
-  resolve_dependencies=false
+  resolve_dependencies=true
   search_mode='search'
   silent=false
   sort_mode='name'
   sync_mode='install'
   temp_directory='/tmp/aurget'
   user_config="${XDG_CONFIG_HOME:-$HOME/.config}/aurgetrc"
+  edit_pkgbuilds='never'
 
   EDITOR="${EDITOR:-$VISUAL}"
   EDITOR="${EDITOR:-vi}"
